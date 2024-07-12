@@ -2,15 +2,21 @@
 % Please edit documentation in R/run_app.R
 \name{run_app}
 \alias{run_app}
-\title{Title}
+\title{Run the app}
 \usage{
 run_app(path = ".")
 }
+\arguments{
+\item{path}{Path to interact with.}
+}
+\value{
+Called for its side effect.
+}
 \description{
-Title
+Run the app
 }
 \examples{
 \dontshow{if (interactive()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
-run_app()
+run_app("/")
 \dontshow{\}) # examplesIf}
 }

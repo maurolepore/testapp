@@ -1,13 +1,15 @@
 #' @import shiny
 NULL
 
-#' Title
+#' Run the app
 #'
-#' @return
+#' @param path Path to interact with.
+#'
+#' @return Called for its side effect.
 #' @export
 #'
 #' @examplesIf interactive()
-#' run_app()
+#' run_app("/")
 run_app <- function(path = ".") {
   from <- function(path) {
     sprintf("read_parquet('%s/**/*.parquet', hive_partitioning = true)", path)
