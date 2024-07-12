@@ -8,7 +8,7 @@ COPY . /app
 
 WORKDIR /app
 
-RUN Rscript -e "install.packages('pak'); pak::pak()"
+RUN Rscript -e "install.packages('pak'); pak::local_install()"
 
 EXPOSE 8080
 
