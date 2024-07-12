@@ -29,7 +29,7 @@ run_app <- function(path = ".") {
 
     output$table <- renderTable({
       req(input$db, input$.n)
-
+      browser()
       con <- DBI::dbConnect(duckdb::duckdb(), dbdir = ":memory:")
       dataset <- dplyr::tbl(con, from = from(input$db))
       utils::head(dataset, input$.n)
