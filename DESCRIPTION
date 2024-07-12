@@ -6,8 +6,11 @@ Authors@R:
            comment = c(ORCID = "https://orcid.org/0000-0002-1986-7988"))
 Description: Provide the UI to interact with data hosted elsewhere.
 License: MIT + file LICENSE
+Imports: 
+    DBI,
+    dplyr,
+    duckdb,
+    shiny
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.1
-Imports: 
-    shiny
