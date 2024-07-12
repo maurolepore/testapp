@@ -4,4 +4,4 @@ options(list(
 ))
 
 pkgload::load_all()
-run_app()
+run_app("/pushymatador/fake")

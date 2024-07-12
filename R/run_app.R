@@ -1,4 +1,5 @@
 #' @import shiny
+#' @importFrom dbplyr tbl_lazy
 NULL
 
 #' Run the app
@@ -17,7 +18,7 @@ run_app <- function(path = ".") {
 
   ui <- fluidPage(
     textInput("path", "Path to explore", value = path),
-    textInput("db", "Path read", value = NULL),
+    textInput("db", "Path read", value = path),
     numericInput(".n", "Rows to show", min = 1, max = 10, value = 5),
     verbatimTextOutput("explore"),
     tableOutput("table")
@@ -28,8 +29,6 @@ run_app <- function(path = ".") {
     })
 
     output$table <- renderTable({
-      req(input$db, input$.n)
-      browser()
       con <- DBI::dbConnect(duckdb::duckdb(), dbdir = ":memory:")
       dataset <- dplyr::tbl(con, from = from(input$db))
       utils::head(dataset, input$.n)
