@@ -4,7 +4,7 @@
 \alias{run_app}
 \title{Run the app}
 \usage{
-run_app(path = ".")
+run_app(path = "/pushymatador/fake/company")
 }
 \arguments{
 \item{path}{Path to interact with.}

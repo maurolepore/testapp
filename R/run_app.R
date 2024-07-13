@@ -11,11 +11,7 @@ NULL
 #'
 #' @examplesIf interactive()
 #' run_app("/")
-run_app <- function(path = ".") {
-  from <- function(path) {
-    sprintf("read_parquet('%s/**/*.parquet', hive_partitioning = true)", path)
-  }
-
+run_app <- function(path = "/pushymatador/fake/company") {
   ui <- fluidPage(
     textInput("path", "Path to explore", value = path),
     textInput("db", "Path read", value = path),
@@ -29,8 +25,7 @@ run_app <- function(path = ".") {
     })
 
     output$table <- renderTable({
-      con <- DBI::dbConnect(duckdb::duckdb(), dbdir = ":memory:")
-      dataset <- dplyr::tbl(con, from = from(input$db))
+      dataset <- arrow::open_dataset(input$db)
       utils::head(dataset, input$.n)
     })
   }

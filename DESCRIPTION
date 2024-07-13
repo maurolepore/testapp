@@ -7,10 +7,7 @@ Authors@R:
 Description: Provide the UI to interact with data hosted elsewhere.
 License: MIT + file LICENSE
 Imports: 
-    DBI,
-    dbplyr,
-    dplyr,
-    duckdb,
+    arrow,
     shiny
 Suggests: 
     pkgload
