@@ -1,5 +1,4 @@
 #' @import shiny
-#' @importFrom dbplyr tbl_lazy
 NULL
 
 #' Run the app

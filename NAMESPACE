@@ -2,4 +2,3 @@
 
 export(run_app)
 import(shiny)
-importFrom(dbplyr,tbl_lazy)
